@@ -15,8 +15,12 @@ If not included with your Docker Desktop Installation, make sure that you have [
 ### Getting our cluster up and running
 
 1. Clone the repo
-   ```sh
+   ```
    git clone https://github.com/luccabb/elasticsearch.git
+   ```
+2. If you're running from an Ubuntu machine you may need the following line (to increase virtual memory)
+   ```
+   sudo sysctl -w vm.max_map_count=262144
    ```
 3. Build our image
    ``` 
@@ -27,6 +31,7 @@ If not included with your Docker Desktop Installation, make sure that you have [
    sudo docker-compose up -d
    ```
 
+If those steps have worked properly, you should be able to navigate to the [Elasticsearch UI](http://localhost:9200) on your localhost.
 ## Doing some basic operations
 
 ### Prerequisites
@@ -55,14 +60,6 @@ python index_data.py
 ```
 python search_data.py
 ```
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* [Docker Desktop](https://www.docker.com/products/docker-desktop)
-
-If not included with your Docker Desktop Installation, make sure that you have [Docker Compose](https://docs.docker.com/compose/install/)
-
 
 <!-- LICENSE -->
 ## License
